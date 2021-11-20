@@ -1,0 +1,23 @@
+Sabiendo dónde están las cosas
+Se desea construir un juego de estrategia por turnos, y para ellos el primer requisito que nos solicitan es el siguiente:
+
+Es indispensable conocer dónde están ubicadas las unidades para poder llevar una buena interacción. Si bien el juego tiene una vista isométrica, sólamente vamos a utilizar dos dimensiones para ubicar a las unidades y edificios. Es por ello que nos alcanza con posición en el eje x, y posición en el eje y.
+De todos modos, la ubicación de poco sirve: sólo la usaremos para dibujar, más adelante. Lo que realmente necesitamos es conocer la distancia que separa dos unidades. Seguramente mi asistente pueda darte un ejemplo.
+Unidad u1 = new Unidad(new Posicion(0, 0));
+Unidad u2 = new Unidad(new Posicion(1, 1));
+Assert.assertEquals(Math.sqrt(2), u1.distanciaCon(u2));
+
+Si entre ellos se pelean…
+¡Genial! Ahora podemos avanzar al siguiente nivel. Las unidades sólo podrán atacarse si están a menos de 2 metros de distancia. 
+En ese caso, cada golpe restará 10 puntos de salud a la otra. Hagamos una prueba de concepto de este primer modelo jugable.
+Unidad u1 = new Unidad(new Posicion(0, 0));
+Unidad u2 = new Unidad(new Posicion(1, 1));
+Unidad u3 = new Unidad(new Posicion(2, 2));
+
+Assert.assertEquals(100, u2.getSalud());
+u1.atacar(u2);
+Assert.assertEquals( 90, u2.getSalud());
+
+Assert.assertEquals(100, u3.getSalud());
+u1.atacar(u3);
+Assert.assertEquals(100, u3.getSalud());
