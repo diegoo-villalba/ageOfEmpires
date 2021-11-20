@@ -1,10 +1,14 @@
 package eraDeImperiosTests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
+import eraDeImperios.Archer;
+import eraDeImperios.Cavalier;
 import eraDeImperios.Position;
+import eraDeImperios.Soldier;
 import eraDeImperios.Unity;
 
 public class UnidadTests {
@@ -37,6 +41,42 @@ public class UnidadTests {
 		u1.attack(u3);
 		assertEquals(100, u3.getHealth(), 0.0);
 
+	}
+	
+	@Test
+	public void cavalierAttackTest() {
+
+		Cavalier c1 = new Cavalier(new Position(0, 0));
+		Unity u2 = new Unity(new Position(1.5, 1.5));
+		
+		assertEquals(100, u2.getHealth(), 0.0);
+		c1.attack(u2);
+		assertEquals(70, u2.getHealth(), 0.0);
+		
+	}
+	
+	@Test
+	public void soldierAttackTest() {
+
+		Soldier s1 = new Soldier(new Position(0, 0));
+		Unity u2 = new Unity(new Position(1.0, 1.0));
+		
+		assertEquals(100, u2.getHealth(), 0.0);
+		s1.attack(u2);
+		assertEquals(80, u2.getHealth(), 0.0);
+		
+	}
+	
+	@Test
+	public void archerAttackTest() {
+
+		Archer a1 = new Archer(new Position(0, 0));
+		Unity u2 = new Unity(new Position(6.0, 6.0));
+		
+		assertEquals(100, u2.getHealth(), 0.0);
+		a1.attack(u2);
+		assertEquals(93, u2.getHealth(), 0.0);
+		
 	}
 
 }
