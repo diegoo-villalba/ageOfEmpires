@@ -19,9 +19,9 @@ public class Soldier extends Unity {
 		return this.attacks > 0;
 	}
 
-	// This method reload the arrows of the archer
-	private void rest() {
-		this.attacks = 10;
+	// This method  of the archer
+	public void rest() {
+		this.attacks = 5;
 	}
 
 	/*

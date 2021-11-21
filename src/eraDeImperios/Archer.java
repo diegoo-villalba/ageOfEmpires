@@ -19,7 +19,8 @@ public class Archer extends Unity {
 		return this.arrows > 0;
 	}
 	
-	private void reload() {
+	//This method reload the arrows of the archer
+	public void reload() {
 		this.arrows = 10;
 	}
 
