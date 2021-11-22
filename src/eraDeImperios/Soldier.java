@@ -19,7 +19,7 @@ public class Soldier extends Unity {
 		return this.attacks > 0;
 	}
 
-	// This method  of the archer
+	// This method renew the energy of the soldier
 	public void rest() {
 		this.attacks = 5;
 	}
